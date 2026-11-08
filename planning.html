@@ -1,1 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planning | Finora</title>
+    <meta name="description" content="Plan, manage and grow your money with goals, checklists and a savings goal estimator.">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/member1.css">
+</head>
+<body>
+
+<!-- ================= NAVIGATION BAR ================= -->
+<header class="header">
+    <nav class="navbar container">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Finora</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="awareness.html">Financial Awareness</a></li>
+            <li><a href="entrepreneurs.html">Women Entrepreneurs</a></li>
+            <li><a href="schemes.html">Government Schemes</a></li>
+            <li><a href="planning.html" class="active">Financial Planning</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#plan" aria-label="Plan your finances">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <a href="#estimator" aria-label="Savings goal estimator">
+                <i class="fa-solid fa-calculator"></i>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero planning-hero">
+    <div class="hero-container container">
+        <div class="hero-content">
+            <span class="hero-label">GOALS • SAVINGS • SECURITY</span>
+            <h1>
+                Financial
+                <span>Planning</span>
+            </h1>
+            <h3>Plan. Manage. Grow.</h3>
+            <p>
+                Plan, manage and grow your money for a secure future.
+                Small, steady steps today build financial confidence
+                for tomorrow.
+            </p>
+            <div class="hero-buttons">
+                <a href="#plan" class="btn btn-primary">
+                    Start Planning
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#estimator" class="btn btn-outline">
+                    Savings Estimator
+                    <i class="fa-solid fa-calculator"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=85"
+                alt="Financial planning and money management"
+            >
+            <div class="hero-stat-card">
+                <div class="stat-item">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Set Goals</h3>
+                    <p>Know Your Targets</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h3>Manage Money</h3>
+                    <p>Track Every Month</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Build Security</h3>
+                    <p>Be Prepared</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Grow Wealth</h3>
+                    <p>Save and Invest</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PLAN YOUR FINANCES ================= -->
+<section class="services section-padding" id="plan">
+    <div class="container">
+        <div class="section-heading">
+            <span>YOUR MONEY ROADMAP</span>
+            <h2>Plan Your Finances</h2>
+            <p>
+                Four simple steps to take control
+                of your money.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Set Goals</h3>
+                <p>
+                    Decide what you are saving for, such as a business,
+                    education or a home, and give each goal an amount
+                    and a timeline.
+                </p>
+                <a href="#estimator">
+                    Estimate Your Goal
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h3>Manage Money</h3>
+                <p>
+                    Track your income and expenses every month and
+                    separate needs from wants so you always know
+                    where your money goes.
+                </p>
+                <a href="#checklist">
+                    See Checklist
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Emergency Fund</h3>
+                <p>
+                    Keep money aside for unexpected situations. Many
+                    people aim for three to six months of essential
+                    expenses.
+                </p>
+                <a href="#checklist">
+                    See Checklist
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h3>Grow Savings</h3>
+                <p>
+                    Save regularly, even in small amounts, and learn
+                    about safe options before choosing where to
+                    invest.
+                </p>
+                <a href="awareness.html">
+                    Learn About Investing
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PLANNING CHECKLIST ================= -->
+<section class="about section-padding" id="checklist">
+    <div class="container">
+        <div class="section-heading">
+            <span>TICK AS YOU GO</span>
+            <h2>Financial Planning Checklist</h2>
+            <p>
+                Tick off each habit as you build it
+                and watch your progress grow.
+            </p>
+        </div>
+
+        <div class="checklist-box">
+            <div class="progress-head">
+                <span id="checkCount">0 of 8 completed</span>
+                <span id="checkPercent">0%</span>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <ul class="checklist" id="planChecklist">
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Write down my monthly income and expenses</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Create a simple monthly budget</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Set at least one clear savings goal</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Open a savings account and save a fixed amount each month</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Start building an emergency fund</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Avoid unnecessary debt and understand loan terms before borrowing</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Never share my OTP, PIN or passwords with anyone</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                        <span class="check-text">Review my budget and goals every month</span>
+                    </label>
+                </li>
+            </ul>
+
+            <p class="checklist-done" id="checklistDone" hidden>
+                <i class="fa-solid fa-trophy"></i>
+                Excellent! You have completed your financial planning checklist.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SAVINGS GOAL ESTIMATOR ================= -->
+<section class="services section-padding" id="estimator">
+    <div class="container">
+        <div class="section-heading">
+            <span>SIMPLE CALCULATOR</span>
+            <h2>Savings Goal Estimator</h2>
+            <p>
+                Find out roughly how long it will take
+                to reach your savings goal.
+            </p>
+        </div>
+
+        <div class="estimator-wrapper">
+            <form id="savingsForm" class="estimator-form" novalidate>
+                <div class="form-group">
+                    <label for="goalAmount">Goal Amount (&#8377;)</label>
+                    <input type="number" id="goalAmount" min="1" step="any" placeholder="e.g. 100000" inputmode="decimal">
+                    <small class="error-msg" id="goalError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="monthlySaving">Monthly Saving (&#8377;)</label>
+                    <input type="number" id="monthlySaving" min="1" step="any" placeholder="e.g. 5000" inputmode="decimal">
+                    <small class="error-msg" id="monthlyError"></small>
+                </div>
+
+                <div class="estimator-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Calculate
+                        <i class="fa-solid fa-calculator"></i>
+                    </button>
+                    <button type="reset" class="btn btn-outline-dark" id="estimatorReset">
+                        Reset
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="estimator-result" id="estimatorResult" aria-live="polite">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <h3>Time to Reach Your Goal</h3>
+                <p class="result-main" id="resultMain">Enter your goal and monthly saving to see the result.</p>
+                <p class="result-sub" id="resultSub"></p>
+            </div>
+        </div>
+
+        <p class="scheme-note">
+            <i class="fa-solid fa-circle-info"></i>
+            This estimate does not include interest or returns. Actual time may be shorter if your savings earn interest.
+        </p>
+    </div>
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+<section class="cta-section">
+    <div class="container cta-content">
+        <div>
+            <span>READY FOR THE NEXT STEP?</span>
+            <h2>A Good Plan Opens the Door to Opportunity.</h2>
+            <p>
+                Explore government schemes that can support
+                your business and financial goals.
+            </p>
+        </div>
+        <a href="schemes.html" class="btn btn-primary">
+            Explore Schemes
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    Finora
+                </a>
+                <p>
+                    Empowering women through financial awareness,
+                    entrepreneurship and opportunities for
+                    financial independence.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="awareness.html">Financial Awareness</a>
+                <a href="entrepreneurs.html">Women Entrepreneurs</a>
+                <a href="schemes.html">Government Schemes</a>
+                <a href="planning.html">Financial Planning</a>
+            </div>
+            <div class="footer-links">
+                <h3>Our Services</h3>
+                <a href="awareness.html">Financial Education</a>
+                <a href="entrepreneurs.html">Business Guidance</a>
+                <a href="schemes.html">Financial Support</a>
+                <a href="planning.html">Financial Planning</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@finora.example
+                </p>
+                <p>
+                    <i class="fa-solid fa-globe"></i>
+                    Women's Financial Empowerment Platform
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Finora. All Rights Reserved.</p>
+            <p>Empowering Women. Enabling Financial Freedom.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script src="js/member1.js"></script>
+</body>
+</html>
