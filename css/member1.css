@@ -2300,3 +2300,828 @@ button:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+/* =========================================
+   FINORA - MEMBER 2 STYLESHEET
+   Pages: schemes.html, planning.html
+   Load AFTER member1.css (uses its variables,
+   navbar, hero, buttons and footer styles).
+   Nothing here changes Member 1's pages.
+========================================= */
+
+
+/* =========================================
+   SHARED FORM ELEMENTS (Member 2 pages)
+========================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--dark);
+    background: var(--white);
+    border: 1px solid #D8CCE8;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.25);
+}
+
+.form-group.invalid input,
+.form-group.invalid select,
+.form-group.invalid textarea {
+    border-color: #C0392B;
+}
+
+.error-msg {
+    display: block;
+    min-height: 18px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #C0392B;
+}
+
+.btn-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-dark:hover {
+    background: var(--purple);
+    color: var(--white);
+}
+
+button.btn {
+    border: 1px solid var(--gold);
+}
+
+.scheme-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 800px;
+    margin: 30px auto 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.scheme-note i {
+    color: var(--gold);
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   SCHEMES PAGE - POPULAR SCHEMES
+========================================= */
+
+.scheme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.scheme-card {
+    background: var(--white);
+    border: 1px solid #E4D8F0;
+    border-bottom: 4px solid var(--gold);
+    border-radius: 16px;
+    padding: 32px 26px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(57, 39, 93, 0.07);
+    transition: 0.35s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scheme-card:hover {
+    transform: translateY(-9px);
+    box-shadow: var(--shadow);
+}
+
+.scheme-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.scheme-tag {
+    color: #B1842E;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.scheme-card > p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.scheme-points {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 22px;
+    flex-grow: 1;
+}
+
+.scheme-points li {
+    font-size: 12px;
+    color: var(--purple);
+    margin-bottom: 9px;
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.scheme-points i {
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+.scheme-card > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.scheme-card > a:hover {
+    color: var(--gold);
+    gap: 13px;
+}
+
+
+/* =========================================
+   SCHEMES PAGE - ELIGIBILITY & DOCUMENTS
+========================================= */
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-box {
+    background: var(--white);
+    border: 1px solid #E4D8F0;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 5px 18px rgba(57, 39, 93, 0.06);
+}
+
+.info-box-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.info-box-head i {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+.info-box-head h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: var(--navy);
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+.info-box li i {
+    color: var(--gold);
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   SCHEMES PAGE - ENQUIRY FORM
+========================================= */
+
+.enquiry-wrapper {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.enquiry-form {
+    background: var(--lavender);
+    border: 1px solid #E2D8EF;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: var(--shadow);
+}
+
+.form-success {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: 22px;
+    padding: 18px;
+    background: #FFFFFF;
+    border-left: 5px solid #2E9E5B;
+    border-radius: 8px;
+}
+
+.form-success[hidden] {
+    display: none;
+}
+
+.form-success i {
+    color: #2E9E5B;
+    font-size: 22px;
+    margin-top: 2px;
+}
+
+.form-success p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--purple);
+}
+
+.enquiry-side {
+    background: var(--gradient);
+    color: var(--white);
+    border-radius: 18px;
+    padding: 35px 30px;
+    box-shadow: var(--shadow);
+    border-bottom: 5px solid var(--gold);
+}
+
+.enquiry-side > i {
+    color: var(--gold);
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.enquiry-side h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.enquiry-side p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #E0DFEA;
+    margin-bottom: 20px;
+}
+
+.enquiry-side ul {
+    list-style: none;
+}
+
+.enquiry-side li {
+    font-size: 13px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.enquiry-side li i {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   SCHEMES PAGE - USEFUL GOVERNMENT LINKS
+========================================= */
+
+.gov-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gov-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid #E4D8F0;
+    border-radius: 14px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.gov-link:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.gov-link > i:first-child {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+.gov-link div {
+    flex: 1;
+    min-width: 0;
+}
+
+.gov-link h3 {
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 3px;
+}
+
+.gov-link p {
+    font-size: 12px;
+    color: var(--text);
+}
+
+.gov-link .go {
+    color: var(--purple);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PLANNING PAGE - HERO (4 INFO ITEMS)
+========================================= */
+
+.planning-hero .hero-image {
+    padding-bottom: 95px;
+}
+
+.planning-hero .hero-image > img {
+    object-position: center 40%;
+}
+
+.planning-hero .hero-stat-card {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 90px;
+    padding: 15px 6px;
+    z-index: 2;
+}
+
+.planning-hero .stat-item {
+    padding: 0 4px;
+    min-width: 0;
+}
+
+.planning-hero .stat-item h3 {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PLANNING PAGE - CHECKLIST
+========================================= */
+
+.checklist-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--lavender);
+    border: 1px solid #E2D8EF;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: var(--shadow);
+}
+
+.progress-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 10px;
+}
+
+.progress-track {
+    height: 10px;
+    background: #DCCFEC;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: var(--gold-gradient);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    margin-bottom: 12px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    background: var(--white);
+    border: 1px solid #E4D8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.check-item:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+}
+
+.check-item input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.check-box {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 2px solid var(--purple);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    font-size: 12px;
+    transition: 0.25s;
+}
+
+.check-text {
+    font-size: 14px;
+    color: var(--dark);
+    line-height: 1.6;
+    transition: 0.25s;
+}
+
+.check-item input:checked ~ .check-box {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: var(--gold);
+}
+
+.check-item input:checked ~ .check-text {
+    color: #8A859E;
+    text-decoration: line-through;
+}
+
+.check-item.checked {
+    background: #FBF7EC;
+    border-color: var(--gold);
+}
+
+.check-item input:focus-visible ~ .check-box {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.checklist-done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 16px;
+    background: var(--white);
+    border-left: 5px solid #2E9E5B;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.checklist-done[hidden] {
+    display: none;
+}
+
+.checklist-done i {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+
+/* =========================================
+   PLANNING PAGE - SAVINGS GOAL ESTIMATOR
+========================================= */
+
+.estimator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 950px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.estimator-form {
+    background: var(--white);
+    border: 1px solid #E4D8F0;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: var(--shadow);
+}
+
+.estimator-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.estimator-result {
+    background: var(--gradient);
+    color: var(--white);
+    border-radius: 18px;
+    padding: 35px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.estimator-result > i {
+    color: var(--gold);
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.estimator-result h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.result-main {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #E0DFEA;
+}
+
+.estimator-result.has-result .result-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.result-sub {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #D6D1E2;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLETS
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .scheme-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gov-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enquiry-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .planning-hero .stat-item h3 {
+        font-size: 12px;
+    }
+
+    .planning-hero .stat-item p {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .scheme-grid,
+    .eligibility-grid,
+    .gov-links-grid,
+    .estimator-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-form,
+    .estimator-form,
+    .checklist-box {
+        padding: 22px;
+    }
+
+    .planning-hero .hero-image {
+        padding-bottom: 130px;
+    }
+
+    .planning-hero .hero-stat-card {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 14px;
+    }
+
+    .planning-hero .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .estimator-actions .btn,
+    .estimator-actions .btn-outline-dark {
+        flex: 1;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .check-item {
+        padding: 13px 14px;
+    }
+
+    .check-text {
+        font-size: 13px;
+    }
+
+    .estimator-result.has-result .result-main {
+        font-size: 24px;
+    }
+
+    .planning-hero .hero-image {
+        padding-bottom: 125px;
+    }
+}
+
+
+/* =========================================
+   SCHEMES PAGE - HERO (matches Member 1 hero fix)
+========================================= */
+
+.schemes-hero .hero-image {
+    padding-bottom: 95px;
+}
+
+.schemes-hero .hero-image > img {
+    height: 420px;
+    object-position: center 25%;
+}
+
+.schemes-hero .hero-stat-card {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 90px;
+    padding: 15px 10px;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+
+    .schemes-hero .hero-image {
+        padding-bottom: 90px;
+    }
+
+    .schemes-hero .hero-image > img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .schemes-hero .hero-image > img {
+        height: 290px;
+    }
+
+    .schemes-hero .stat-item h3 {
+        font-size: 11px;
+    }
+
+    .schemes-hero .stat-item p {
+        font-size: 9px;
+    }
+
+    .schemes-hero .stat-item i {
+        font-size: 18px;
+    }
+}
+
+
+/* Planning hero image height on small screens (same as Member 1 pages) */
+
+@media (max-width: 768px) {
+
+    .planning-hero .hero-image > img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .planning-hero .hero-image > img {
+        height: 290px;
+    }
+
+    .planning-hero .stat-item i {
+        font-size: 18px;
+    }
+}
