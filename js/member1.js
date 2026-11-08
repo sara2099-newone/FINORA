@@ -474,3 +474,322 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+/* =========================================
+   FINORA - MEMBER 2 JAVASCRIPT
+   Pages: schemes.html, planning.html
+   Load AFTER member1.js. The mobile menu,
+   smooth scrolling, active nav link and footer
+   year are already handled by member1.js.
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       1. SCHEME ENQUIRY FORM (schemes.html)
+    ========================================= */
+
+    const schemeForm = document.getElementById("schemeForm");
+
+    if (schemeForm) {
+
+        const fields = {
+            name: {
+                input: document.getElementById("enqName"),
+                error: document.getElementById("nameError")
+            },
+            email: {
+                input: document.getElementById("enqEmail"),
+                error: document.getElementById("emailError")
+            },
+            type: {
+                input: document.getElementById("enqType"),
+                error: document.getElementById("typeError")
+            },
+            message: {
+                input: document.getElementById("enqMessage"),
+                error: document.getElementById("messageError")
+            }
+        };
+
+        const formSuccess = document.getElementById("formSuccess");
+        const successText = document.getElementById("successText");
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        function setError(field, message) {
+            field.error.textContent = message;
+            field.input.parentElement.classList.add("invalid");
+        }
+
+        function clearError(field) {
+            field.error.textContent = "";
+            field.input.parentElement.classList.remove("invalid");
+        }
+
+        // Returns an error message, or "" when the value is valid
+        function validate(key) {
+
+            const value = fields[key].input.value.trim();
+
+            if (key === "name") {
+                if (value === "") return "Please enter your name.";
+                if (value.length < 2) return "Name must be at least 2 characters.";
+                if (!/^[A-Za-z\s.'-]+$/.test(value)) return "Name can contain only letters and spaces.";
+            }
+
+            if (key === "email") {
+                if (value === "") return "Please enter your email address.";
+                if (!emailPattern.test(value)) return "Please enter a valid email address.";
+            }
+
+            if (key === "type") {
+                if (value === "") return "Please select a type of assistance.";
+            }
+
+            if (key === "message") {
+                if (value === "") return "Please write your message.";
+                if (value.length < 10) return "Message must be at least 10 characters.";
+            }
+
+            return "";
+        }
+
+        // Live validation: check a field when the user leaves it,
+        // and clear its error as soon as they fix it
+        Object.keys(fields).forEach(function (key) {
+
+            const input = fields[key].input;
+            const eventName = key === "type" ? "change" : "blur";
+
+            input.addEventListener(eventName, function () {
+                const message = validate(key);
+                if (message) {
+                    setError(fields[key], message);
+                } else {
+                    clearError(fields[key]);
+                }
+            });
+
+            input.addEventListener("input", function () {
+                if (input.parentElement.classList.contains("invalid") && !validate(key)) {
+                    clearError(fields[key]);
+                }
+            });
+
+        });
+
+        schemeForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            formSuccess.hidden = true;
+
+            let firstInvalid = null;
+
+            Object.keys(fields).forEach(function (key) {
+
+                const message = validate(key);
+
+                if (message) {
+                    setError(fields[key], message);
+                    if (!firstInvalid) firstInvalid = fields[key].input;
+                } else {
+                    clearError(fields[key]);
+                }
+
+            });
+
+            if (firstInvalid) {
+                firstInvalid.focus();
+                return;
+            }
+
+            const firstName = fields.name.input.value.trim().split(" ")[0];
+
+            successText.textContent =
+                "Thank you, " + firstName + "! Your enquiry has been " +
+                "submitted successfully. We will get back to you at " +
+                fields.email.input.value.trim() + " soon.";
+
+            formSuccess.hidden = false;
+
+            schemeForm.reset();
+
+            formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        });
+
+        schemeForm.addEventListener("reset", function () {
+
+            Object.keys(fields).forEach(function (key) {
+                clearError(fields[key]);
+            });
+
+            formSuccess.hidden = true;
+
+        });
+    }
+
+
+    /* =========================================
+       2. PLANNING CHECKLIST (planning.html)
+    ========================================= */
+
+    const checklist = document.getElementById("planChecklist");
+
+    if (checklist) {
+
+        const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+        const checkCount = document.getElementById("checkCount");
+        const checkPercent = document.getElementById("checkPercent");
+        const progressFill = document.getElementById("progressFill");
+        const checklistDone = document.getElementById("checklistDone");
+
+        function updateChecklist() {
+
+            const total = checkboxes.length;
+            let done = 0;
+
+            checkboxes.forEach(function (box) {
+
+                const item = box.closest(".check-item");
+
+                if (box.checked) {
+                    done++;
+                    item.classList.add("checked");
+                } else {
+                    item.classList.remove("checked");
+                }
+
+            });
+
+            const percent = Math.round((done / total) * 100);
+
+            checkCount.textContent = done + " of " + total + " completed";
+            checkPercent.textContent = percent + "%";
+            progressFill.style.width = percent + "%";
+            checklistDone.hidden = done !== total;
+
+        }
+
+        checkboxes.forEach(function (box) {
+            box.addEventListener("change", updateChecklist);
+        });
+
+        updateChecklist();
+    }
+
+
+    /* =========================================
+       3. SAVINGS GOAL ESTIMATOR (planning.html)
+    ========================================= */
+
+    const savingsForm = document.getElementById("savingsForm");
+
+    if (savingsForm) {
+
+        const goalInput = document.getElementById("goalAmount");
+        const monthlyInput = document.getElementById("monthlySaving");
+        const goalError = document.getElementById("goalError");
+        const monthlyError = document.getElementById("monthlyError");
+        const resultBox = document.getElementById("estimatorResult");
+        const resultMain = document.getElementById("resultMain");
+        const resultSub = document.getElementById("resultSub");
+
+        const defaultMessage = "Enter your goal and monthly saving to see the result.";
+
+        // Indian number format, e.g. 1,00,000
+        function formatRupees(amount) {
+            return "\u20B9" + Number(amount).toLocaleString("en-IN");
+        }
+
+        function plural(count, word) {
+            return count + " " + word + (count === 1 ? "" : "s");
+        }
+
+        function showError(input, errorEl, message) {
+            errorEl.textContent = message;
+            input.parentElement.classList.add("invalid");
+        }
+
+        function clearError(input, errorEl) {
+            errorEl.textContent = "";
+            input.parentElement.classList.remove("invalid");
+        }
+
+        function resetResult() {
+            resultBox.classList.remove("has-result");
+            resultMain.textContent = defaultMessage;
+            resultSub.textContent = "";
+        }
+
+        [goalInput, monthlyInput].forEach(function (input) {
+            input.addEventListener("input", function () {
+                clearError(goalInput, goalError);
+                clearError(monthlyInput, monthlyError);
+            });
+        });
+
+        savingsForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const goal = parseFloat(goalInput.value);
+            const monthly = parseFloat(monthlyInput.value);
+
+            let valid = true;
+
+            clearError(goalInput, goalError);
+            clearError(monthlyInput, monthlyError);
+
+            if (isNaN(goal) || goal <= 0) {
+                showError(goalInput, goalError, "Please enter a goal amount greater than 0.");
+                valid = false;
+            }
+
+            if (isNaN(monthly) || monthly <= 0) {
+                showError(monthlyInput, monthlyError, "Please enter a monthly saving greater than 0.");
+                valid = false;
+            }
+
+            if (!valid) {
+                resetResult();
+                return;
+            }
+
+            const totalMonths = Math.ceil(goal / monthly);
+            const years = Math.floor(totalMonths / 12);
+            const months = totalMonths % 12;
+
+            let timeText;
+
+            if (years === 0) {
+                timeText = plural(months, "month");
+            } else if (months === 0) {
+                timeText = plural(years, "year");
+            } else {
+                timeText = plural(years, "year") + " " + plural(months, "month");
+            }
+
+            resultBox.classList.add("has-result");
+            resultMain.textContent = timeText;
+
+            let sub = "Saving " + formatRupees(monthly) + " every month, you can reach " +
+                      formatRupees(goal) + " in about " + plural(totalMonths, "month") + ".";
+
+            if (monthly >= goal) {
+                sub = "Your monthly saving already covers this goal in a single month!";
+            }
+
+            resultSub.textContent = sub;
+
+        });
+
+        savingsForm.addEventListener("reset", function () {
+            clearError(goalInput, goalError);
+            clearError(monthlyInput, monthlyError);
+            resetResult();
+        });
+    }
+
+});
